@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, 
+        shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Survey Form</title>
+        <style>
+        .form{
+            text-align: center;
+            size: 1pt;
+            block-size: 90%;
+            margin-bottom: 3%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        </style>
+</head>
+<body background="https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <h2 style="color: goldenrod;margin-left: 45%">Survey Form</h2>
+    <form style="background-color: whitesmoke" class="form">
+        <p>Let us know how we can improve freeCodeCamp</p>
+        <label>*Name</label>
+        <input type="text" required name="name" width="100" height="5"><br/>
+        <label>*Email</label>
+        <input type="email" required name="email"><br/>
+        <label>Age</label>
+        <input type="number" name="age"><br/>
+        <label>Which option best describes your current role?</label>
+        <select>
+            <option value="student">Student</option>
+            <option value="employed">Employed</option>
+            <option value="Businessperson">Businessperson</option>
+            <option value="self">Self Self-Employed</option>
+        </select><br/>
+        <label>How likely are you to recommend</label><br/>
+        <label style="padding-top: 1px">to a friend?</label>
+        <input type="radio" name="select" value="definitely" checked>Definitely<br/>
+        <input style="margin-left: 5%" type="radio" name="select" value="maybe">Maybe<br/>
+        <input style="margin-left: 6%" type="radio" name="select" value="notsure">Not Sure<br/>
+        <label>What do you like in FCC?</label>
+        <select>
+                <option value="option1">Select an Option</option>
+                <option value="option2">Simplicity</option>
+                <option value="option3">Resources</option>
+                <option value="option4">Nothing</option>
+        </select><br/>
+        <label>Things need to be improved:</label>
+        <p class="small">(Check all that apply)</p>
+        <input type="checkbox" name="name1" value="frontend"> Front-end Pprojects<br>
+        <input type="checkbox" name="name2" value="backend">Back-end Projects<br>
+        <input type="checkbox" name="name3" value="data">Data Visualisation<br>
+        <input type="checkbox" name="name4" value="videos">Videos<br>
+        <input type="checkbox" name="name5" value="meetups">City Meetups<br>
+        <label>Comments/Suggestions</label>
+        <input type="text" name="feedback" style="width: 300px;height:100px; margin-top: 3% "><br/>
+        <button style="color: teal; margin-top: 3%;margin-bottom: 3%" type="button">Submit</button>
+        <button style="color: teal; margin-top: 3%;margin-bottom: 3%;margin-left: 1%" type="button">Display</button>
+    </form>
+    <script>
+        var student={fullName:""};
+        Object.defineProperty(student,"fullName",{
+            set:function(name){this.fullName=name},
+            get:function(){return this.fullName;}
+        });
+        student.fullName="Ashmita";
+        console.log(student);
+    </script>
+</body>
+</html>

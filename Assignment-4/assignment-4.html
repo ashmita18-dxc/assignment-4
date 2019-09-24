@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, 
+        shrink-to-fit=no">
+         <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Datasheet Entry</title>
+<style>
+table,tr{
+  border: 1px solid black;
+  border-collapse: collapse;
+  border: 10pt;
+  padding: 5%;
+}
+</style>
+</head>
+<body>
+    <h1 style="text-align: center" id="demo">Sample Form</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form>
+                    <label style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Sl. No.</label>
+                    <p id="num">0</p>
+                    <br/>
+                    <label style="padding-top: 2%;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Code</label>
+                    <input style="margin-top: 2%" type="text" required id="item">
+                    <br/>
+                    <label style="padding-top: 2%; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Quantity</label>
+                    <input style="margin-top: 2%" type="number" required id="qty">
+                    <br/>
+                    <label style="padding-top: 2%; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Rate</label>
+                    <input style="margin-top: 2%" type="number" required id="rate">
+                    <br/>
+                    <button style="margin-top: 10px; margin-left: 30%" type="button" class="btn btn-info" onclick="display()">Submit</button><br/>
+                    <button style="margin-top: 5px; margin-left: 5%" type="button" class="btn btn-info" onclick="modal1()" id="order1" data-toggle="modal" data-target="#order">Place Order</button>
+                    <button style="margin-top: 5px; margin-left: 5%" type="button" class="btn btn-info" onclick="modal2()" id="invoice1" data-toggle="modal" data-target="#view">View Invoice</button> 
+                </form>
+            </div>
+            <div class="col-md-8">
+                <table id="table" style="width: 100%">
+                <thead>
+                    <th>Code</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>Total Amount</th>
+                </thead>
+            
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="order">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Address Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please prove your address below:</p>
+                        <input type="text" id = "line1" placeholder="Line 1" required style="width: 100%;border-radius: 2px"/>
+                        <input type="text" id = "line2" placeholder="Line 2" style="width: 100%;border-radius: 2px"/>
+                        <input type="text" id = "line3" placeholder="Line 3" style="width: 100%;border-radius: 2px"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id = "phone1" class="form-control" placeholder="PhoneNumber" required/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="view">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Your Invoice:</h4>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3" style="border-right: 2px solid black">
+                            <h5>Address:</h5>
+                            <p id = "addr1"></p>
+                            <h5>Phone:</h5>
+                            <p id = "phn1"></p>
+                        </div>
+                        <div class="col-md-6 offset - 3">
+                                        
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./JavaScript/display.js"></script>
+</body>
+</html>
